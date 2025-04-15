@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import { FaDonate } from "react-icons/fa";
@@ -10,17 +9,30 @@ import axios from "axios";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const userData = localStorage.getItem("user");
-  const user = JSON.parse(userData);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); 
   const [editing, setEditing] = useState(false);
-  const [name, setName] = useState(user.name);
-  const [number, setNumber] = useState(user.number);
-  const [email, setEmail] = useState(user.email);
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      const parsedUser = JSON.parse(userData);
+      setUser(parsedUser);
+      setName(parsedUser.name);
+      setNumber(parsedUser.number);
+      setEmail(parsedUser.email);
+    }
+    setLoading(false); 
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    navigate("/");
+    navigate("/login");
+    console.log("logout");
   };
 
   const handleEditProfile = () => {
@@ -43,13 +55,29 @@ const Profile = () => {
         email,
       });
       console.log(response.data);
-      // Update the user object in localStorage if needed
       localStorage.setItem("user", JSON.stringify(response.data));
+      setUser(response.data); // Update local state
       setEditing(false);
     } catch (error) {
       console.error(error);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="wrapper">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="wrapper">
+        <p>Please login to view your profile.</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -60,12 +88,9 @@ const Profile = () => {
             <div className="info">
               {!editing ? (
                 <>
-                  <p className="name">{user.name}</p>
+                  <p className="name">{name}</p>
                   <p className="place">
-                    <button
-                      className="logout"
-                      onClick={handleLogout}
-                    >
+                    <button className="logout" onClick={handleLogout}>
                       Logout
                     </button>
                   </p>
@@ -102,23 +127,20 @@ const Profile = () => {
                     <span className="icon">
                       <MdEmail />
                     </span>
-                    <span className="title"> {user.email}</span>
+                    <span className="title">{email}</span>
                   </li>
                   <li>
                     <span className="icon">
                       <BsFillTelephoneFill />
                     </span>
-                    <span className="title"> {user.number}</span>
+                    <span className="title">{number}</span>
                   </li>
                 </ul>
               ) : null}
             </div>
             <div className="tags_wrap">
               {!editing ? (
-                <span
-                  className="tag"
-                  onClick={handleEditProfile}
-                >
+                <span className="tag" onClick={handleEditProfile}>
                   Edit Profile
                 </span>
               ) : null}
@@ -127,7 +149,6 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        {/* ... */}
       </div>
     </div>
   );

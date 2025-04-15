@@ -63,7 +63,7 @@ const Sidebar = ({ user, isSiderOpen, setIsSiderOpen }) => {
           <Link to="/">
             <h1>
               <span style={{ color: "#000000", fontSize: "1.5rem" }}>
-                ShareThe<span style={{ color: "red", fontSize: "2rem" }} >MEAL</span>
+                DonateThe<span style={{ color: "#f46d43", fontSize: "2rem" }} >MEAL</span>
               </span>
             </h1>
           </Link>
@@ -87,7 +87,7 @@ const Sidebar = ({ user, isSiderOpen, setIsSiderOpen }) => {
               gap: "1rem",
               cursor: "pointer",
               color: active === item.path.substring(1) ? "#fff" : "",
-              backgroundColor: active === item.path.substring(1) ? "red" : "",
+              backgroundColor: active === item.path.substring(1) ? "#f46d43" : "",
               padding: "1rem 1.5rem",
               borderRadius: "0.5rem",
             }}
@@ -114,7 +114,7 @@ const Sidebar = ({ user, isSiderOpen, setIsSiderOpen }) => {
               gap: "1rem",
               cursor: "pointer",
               color: active === "admin" ? "#fff" : "",
-              backgroundColor: active === "admin" ? "red" : "",
+              backgroundColor: active === "admin" ? "#f46d43" : "",
               padding: "1rem 1.5rem",
               borderRadius: "0.5rem",
             }}

@@ -39,7 +39,7 @@
   }
 
 .btn-card {
-    background-color: red;
+    background-color: #f46d43;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -52,6 +52,6 @@
   }
   
 .btn-card:hover {
-    background-color: rgb(176, 10, 10);
+    background-color: rgb(123, 66, 5);
   }
   

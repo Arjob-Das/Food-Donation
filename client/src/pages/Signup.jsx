@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import axios from "axios";
 import "./Signup.css";
 
@@ -27,32 +26,23 @@ const Signup = () => {
       password: formData.password,
       number: formData.number,
     };
-    try {
-      await axios
-        .post("http://localhost:3000/signup", data)
-        .then((response) => {
-          alert(response.message);
-          console.log(response);
-        });
 
-      navigate("/"); // redirect to home page
+    try {
+      const response = await axios.post("http://localhost:3000/signup", data);
+      console.log(response);
+
+      navigate("/login"); // redirect to login after successful signup
     } catch (err) {
-      if (err.response) {
-        alert(err.response.data.message); // Show backend error message
-        console.error("Error response:", err.response.data);
-      } else {
-        alert("Something went wrong!");
-        console.error("Unknown error:", err);
-      }
+      console.error(err);
     }
   };
 
   return (
-    <div class="signup_container">
-      <div class="signup_main-img"></div>
+    <div className="signup_container">
+      <div className="signup_main-img"></div>
 
-      <div class="signup_wrapper">
-        <form>
+      <div className="signup_wrapper">
+        <form onSubmit={handleSubmit}>
           <h1>Sign-Up</h1>
           <p>Create your free account on Food-donation</p>
 
@@ -63,44 +53,44 @@ const Signup = () => {
             onChange={handleChange}
             placeholder="Enter your name"
             id="name"
+            required
           />
           <input
-            type="text"
+            type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             placeholder="Enter your email"
             id="email"
+            required
           />
           <input
-            type="text"
+            type="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
             placeholder="Enter your password"
             id="password"
+            required
           />
           <input
-            type="phone"
+            type="text"
             name="number"
             value={formData.number}
             onChange={handleChange}
             placeholder="Enter your phone number"
             id="phone"
+            required
           />
 
-          <button
-            type="submit"
-            id="signup-btn"
-            onClick={handleSubmit}
-          >
+          <button type="submit" id="signup-btn">
             Sign Up
           </button>
 
-          <div class="login">
+          <div className="login">
             <p>Already have an account?</p>
-            <Link to={"/login"}>
-              <button class="login-btn">Login</button>
+            <Link to="/login">
+              <button type="button" className="login-btn">Login</button>
             </Link>
           </div>
         </form>

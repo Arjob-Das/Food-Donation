@@ -32,7 +32,8 @@
 }
 
 .info-img {
-    background-image: url("../../assets/work.jpg");
+    /* background-image: url("../../assets/work.jpg"); */
+    background-image: url("oimg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

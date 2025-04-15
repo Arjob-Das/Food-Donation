@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = 'mongodb://127.0.0.1:27017/food-donations';
-
+const MONGODB_URI = 'Your Localhost or Atlas MongoDB URL';
 const connectDB = async () => {
     try {
         await mongoose.connect(MONGODB_URI, {

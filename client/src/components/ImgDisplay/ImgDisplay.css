@@ -18,7 +18,7 @@
 }
 
 .img-text span {
-    color: red;
+    color: #f46d43;
 }
 
 h3 {
@@ -34,7 +34,7 @@ h3 {
     padding: 1rem 1.5rem;
     font-size: 1.4rem;
     border: 1.5px solid transparent;
-    background: rgb(250, 1, 1);
+    background: #f46d43;
     color: white;
     position: relative;
     top: 355px;

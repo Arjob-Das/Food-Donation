@@ -33,7 +33,7 @@ li {
 
 
   span{
-    color: red;
+    color:#f46d43;
     font-weight: 500;
   }
 }
@@ -66,36 +66,75 @@ li {
 }
 
 .nav-items ul li:hover > a {
-  color: rgb(248, 10, 10);
+  color: #f46d43;
   transition: 0.5s;
 }
 
 
-.header-login .hamburger-menu {
-  display: none;
-}
+// .header-login .hamburger-menu {
+//   display: none;
+// }
 
 
-.header-login{
+// .header-login{
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin-left: 30px;
+
+//     .btn-nav{
+//       padding: 1rem 2rem;
+//       font-size: 1.2rem;
+//       border: 1.5px solid transparent;
+//       background: #f46d43;
+//       color: white;
+//       font-weight: 500;
+//     }
+    
+//     .btn-nav:hover{
+//       background-color: #f5f5f5;
+//       color: black;
+//       cursor: pointer;
+//     }
+// }
+
+.header-login {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 30px;
+  position: relative;
 
-    .btn-nav{
+  .l-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .btn-nav {
       padding: 1rem 2rem;
       font-size: 1.2rem;
       border: 1.5px solid transparent;
-      background: rgb(250, 1, 1);
+      background: #f46d43;
       color: white;
       font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
     }
-    
-    .btn-nav:hover{
+
+    .btn-nav:hover {
       background-color: #f5f5f5;
       color: black;
       cursor: pointer;
     }
+  }
+
+  .hamburger-menu {
+    display: none;
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    color: black;
+  }
 }
 
 @media (max-width: 1080px) {
@@ -162,31 +201,51 @@ li {
   .mobile-menu-link ul li:first-child {
     transition-delay: 0.2s;
   }
-
   .header-login {
-    grid-row: 1/2;
-    grid-column: 3/5;
-    justify-items: end;
-    align-items: center;
-    transition: all 2s linear;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
   }
 
-  .header-login .social-media-desktop {
-    height: 0;
-    display: none;
+  .header-login .l-btn {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
   }
 
-  .header-login {
-    height: 7rem;
-    display: flex;
-    justify-self: end;
-    align-items: center;
+  .header-login .l-btn .btn-nav {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    width: 100%;
   }
 
   .header-login .hamburger-menu {
     display: block;
-    font-size: 2.5rem;
   }
+  // .header-login {
+  //   grid-row: 1/2;
+  //   grid-column: 3/5;
+  //   justify-items: end;
+  //   align-items: center;
+  //   transition: all 2s linear;
+  // }
+
+  // .header-login .social-media-desktop {
+  //   height: 0;
+  //   display: none;
+  // }
+
+  // .header-login {
+  //   height: 7rem;
+  //   display: flex;
+  //   justify-self: end;
+  //   align-items: center;
+  // }
+
+  // .header-login .hamburger-menu {
+  //   display: block;
+  //   font-size: 2.5rem;
+  // }
 }
 
 @media (max-width: 798px) {
@@ -198,18 +257,33 @@ li {
   .logo {
     height: 6rem;
   }
-
   .header-login {
-    height: 6rem;
-    display: flex;
-    justify-self: end;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
   }
+  
+  .header-login .l-btn {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .header-login .l-btn .btn-nav {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.4rem;
+  }
+  
+  // .header-login {
+  //   height: 6rem;
+  //   display: flex;
+  //   justify-self: end;
+  //   align-items: center;
+  // }
 
-  .header-login .hamburger-menu {
-    display: block;
-    font-size: 2.5rem;
-  }
+  // .header-login .hamburger-menu {
+  //   display: block;
+  //   font-size: 2.5rem;
+  // }
 }
 
 @media (max-width: 520px) {
@@ -225,16 +299,31 @@ li {
   .logo h2 {
     font-size: 2rem;
   }
-
   .header-login {
-    height: 6rem;
-    display: flex;
-    justify-self: end;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
   }
+  
+  .header-login .l-btn {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .header-login .l-btn .btn-nav {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.4rem;
+  }
+  
+  // .header-login {
+  //   height: 6rem;
+  //   display: flex;
+  //   justify-self: end;
+  //   align-items: center;
+  // }
 
-  .header-login .hamburger-menu {
-    display: block;
-    font-size: 2.5rem;
-  }
-}
+  // .header-login .hamburger-menu {
+  //   display: block;
+  //   font-size: 2.5rem;
+  // }
+} 

@@ -1,40 +1,42 @@
 .foodDonation_container {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: space-around;
     margin-right: 2rem;
     background-color: #bebebe;
-    /* border:2px solid #6B5B95; */
+
     padding: 2rem;
-    /* border-radius: 20px; */
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    /* background: linear-gradient(#253D5B, #67697C); */
     background: linear-gradient(#3D405B, #575c85);
-    /* background-color: #243b55; */
-
-
     height: 100vh;
-    display: flex;
-
-
-
 }
 
 .foodDonation_heading {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2rem;
     color: white;
-    margin: 2rem;
-    margin-bottom: 5rem;
-
+    margin-top: -38rem;
+    margin-bottom: 3rem;
 }
-
+.foodDonation_wrapper {
+    margin-top: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
 .food-donation_form {
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-around;
 }
 
@@ -43,8 +45,6 @@
     width: auto;
     height: 6rem;
     flex-direction: column;
-
-
 }
 
 .form_element label {
@@ -88,15 +88,3 @@
     margin: auto;
 }
 
-.foodDonation_wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, .5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-    border-radius: 10px;
-}

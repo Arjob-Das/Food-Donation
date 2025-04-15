@@ -1,5 +1,6 @@
 # Food Donation
 
+[![Food Donation](https://img.youtube.com/vi/uiFmoIfHRp8/0.jpg)](https://www.youtube.com/watch?v=uiFmoIfHRp8)
 
 Food Donation is a web application aimed at connecting individuals and organizations willing to donate excess food with those in need. It provides a platform to reduce food wastage and contribute to the well-being of communities.
 
@@ -22,7 +23,7 @@ Food Donation is a web application aimed at connecting individuals and organizat
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/Arjob-Das/food-donation.git`
+1. Clone the repository: `git clone https://github.com/devprashantt/food-donation.git`
 
 2. Frontend Installation:
 - Navigate to the project frontend directory:
@@ -63,4 +64,12 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your mach
 2. Backend:
 - The backend server will be running at `http://localhost:3000`.
 - The frontend application will communicate with the backend server for data exchange.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
