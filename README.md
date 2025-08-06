@@ -1,6 +1,5 @@
 # Food Donation
 
-[![Food Donation]
 
 Food Donation is a web application aimed at connecting individuals and organizations willing to donate excess food with those in need. It provides a platform to reduce food wastage and contribute to the well-being of communities.
 
